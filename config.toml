@@ -1,8 +1,8 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "CC2ASN"
-themesDir = "../.."
-theme = "hugo-winston"
+themesDir = "theme"
+theme = "hugo-winston-theme"
 
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
