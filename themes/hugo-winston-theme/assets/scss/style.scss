@@ -1,5 +1,5 @@
 :root {
-  --font-family-heading: 'Audiowide', sans-serif;
+  --font-family-heading: 'Gugi', sans-serif;
   --font-family-paragraph: Helvetica, sans-serif;
   --font-family-mono: monospace;
   --base-color: #c9e0ff;
@@ -10,12 +10,12 @@
 }
 
 @font-face {
-  font-family: 'Audiowide';
+  font-family: 'Gugi';
   font-style: normal;
   font-weight: 400;
   src: local(''),
-       url('/fonts/audiowide-v14-latin-regular.woff2') format('woff2'), 
-       url('/fonts/audiowide-v14-latin-regular.woff') format('woff'); 
+       url('/fonts/gugi-v11-latin-regular.woff2') format('woff2'), 
+       url('/fonts/gugi-v11-latin-regular.woff') format('woff'); 
 }
 
 $breakpoints: (
