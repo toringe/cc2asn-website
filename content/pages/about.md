@@ -93,3 +93,12 @@ fitness for a particular purpose. CC2ASN will not be liable to you or anyone
 else for any decision made or action taken in reliance on the information given 
 by the service or for any consequential, special or similar damages, even if 
 advised of the possibility of such damages.
+
+### 💎 Resources
+- [RIR](https://en.wikipedia.org/wiki/Regional_Internet_registry) [Statistics Exchange Format](https://ftp.ripe.net/ripe/stats/RIR-Statistics-Exchange-Format.txt)
+- [ARIN](https://www.arin.net/) [Delegations](https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest)
+- [RIPE](https://www.ripe.net/) [Delegations](https://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest)
+- [APNIC](https://www.apnic.net/) [Delegations](https://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest)
+- [LACNIC](https://www.lacnic.net/) [Delegations](https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest)
+- [AFRINIC](https://afrinic.net/) [Delegations](https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest)
+- 
