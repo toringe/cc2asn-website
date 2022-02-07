@@ -129,6 +129,7 @@ ul {
   }
   code,
   pre {
+  	margin-top: -20px;
     font-family: var(--font-family-monospace);
   }
   .highlight {
@@ -136,9 +137,11 @@ ul {
       border-radius: 3px;
       font-size: 14px;
       line-height: 18px;
-      padding: 30px;
+      padding: 10px;
       overflow: auto;
       font-family: var(--font-family-monospace);
+	  color: white;
+	  background-color: #202124;
     }
   }
 }
