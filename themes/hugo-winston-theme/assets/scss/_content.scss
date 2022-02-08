@@ -27,7 +27,7 @@ ul {
   padding: 0;
   list-style: none;
   li {
-    list-style: none;
+   	list-style: none;
   }
 }
 
@@ -83,15 +83,15 @@ ul {
       margin-bottom: 10px;
       margin-left: 0;
       @include breakpoint('small') {
-        margin-left: 20px;
+        margin-left: 0px;
       }
     }
     @include breakpoint('small') {
-      margin-left: 20px;
+      margin-left: 0px;
     }
   }
   a {
-    text-decoration: underline;
+    text-decoration: none;
     &:hover {
     }
   }
