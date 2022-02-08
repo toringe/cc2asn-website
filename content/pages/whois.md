@@ -19,17 +19,17 @@ retired when the usage is low enough.
 Here are some examples querying the service using the Whois client.
 
 Get all ASNs for Finland 
-```bash
+```console
 > whois -h cc2asn.com 'fi'
 ```
 
 Get all IPv6 prefixes for Kenya:
-```bash
+```console
 > whois -h cc2asn.com 'ipv6 ke'
 ```
 
 Get all records for Costa Rica:
-```bash
+```console
 > whois -h cc2asn.com 'all cr'
 ```
 
@@ -40,12 +40,12 @@ The whois client was not designed to receive large data sets. This is usually
 the case if you get the error `fgets: connection reset by peer`.
 
 Get ASNs for China using netcat:
-```bash
+```console
 > echo cn | nc cc2asn.com 43
 ```
 
 Get IPv4 prefixes for Denmark using netcat:
-```bash
+```console
 > echo ipv4 dk | cc2asn.com 43
 ```
 
