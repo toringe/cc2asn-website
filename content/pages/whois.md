@@ -46,7 +46,7 @@ Get ASNs for China using netcat:
 
 Get IPv4 prefixes for Denmark using netcat:
 ```console
-> echo ipv4 dk | cc2asn.com 43
+> echo ipv4 dk | nc cc2asn.com 43
 ```
 
 
