@@ -1,0 +1,88 @@
+==================================================================
+https://keybase.io/toringe
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://www.cc2asn.com
+  * I am toringe (https://keybase.io/toringe) on keybase.
+  * I have a public key with fingerprint B1D7 9928 47B5 F9FB 20B6  4C8C 7326 30BD 60EB 312E
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "01017e051eab7e1cddceb33a4cdef90f245798b4ae99adaba7dd6e4d0e55a296122c0a",
+      "fingerprint": "b1d7992847b5f9fb20b64c8c732630bd60eb312e",
+      "host": "keybase.io",
+      "key_id": "732630bd60eb312e",
+      "kid": "01017e051eab7e1cddceb33a4cdef90f245798b4ae99adaba7dd6e4d0e55a296122c0a",
+      "uid": "a702ce55abf1e2c8de7f51e4ce288d19",
+      "username": "toringe"
+    },
+    "merkle_root": {
+      "ctime": 1644775071,
+      "hash_meta": "52c3715c22153e56faa2e0ae3ed0169e6628088f8a087b47eea1069f34aa5851",
+      "seqno": 21863656
+    },
+    "revoke": {
+      "sig_ids": [
+        "73fa95eb98c71878511bbac41cde002216d90ad8f2453750145ad0096e63ea710f"
+      ]
+    },
+    "service": {
+      "hostname": "www.cc2asn.com",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 1
+  },
+  "ctime": 1644775089,
+  "expire_in": 157680000,
+  "prev": "a58703ee3e97cdcae32b0eb92f5cc217239c5defe5f2c70e13249ac69e1257aa",
+  "seqno": 103,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.1.13
+Comment: https://keybase.io/crypto
+
+yMPWAnicrZN7bBRFHMevtCAgepUUDFKIXZQqPZqZ2cfsXoAGRHmITYRSBCvH7O5s
+e1x7W3a3LUc5XgVbAWmFvpBqIhbB8AgvAbVFOLWKQEA0hFCK2IZAtSRUXo2gcbbB
+mBj/dP/Z7M739/19f5+Z+eqxeM/AOHs0aF7wK0yPOxmLFHnUAS/tK+VUU49w/lIu
+RHtfNF+nthMIBXXOzwEIIKZAhJSomEJN1zWq8jwRNJ0aCjCQIGJFVgVCFYXoRCVY
+1yUq6ICKIkGKBBHSAOF8nBEM51Kr0AqGHWarQh0rCpIFrIqGYqgIqJKgyRrmkcQD
+VZcA6wIRZYV5pu1WsHAqsWl60GT/2EegN95/6P/n3EW9dgQDpLlLqgEp0mSdYoN5
+CxpFsqxDxRXa1AqTAsrUjmm503JRH1dArVA+DVim6bhsNSfoKqAkCBiLAEM2H7Hz
+AgXUIaxQRBqPoaghBEWeipJBCKKAUJ7qAEoKlSQkA1k2ZAJkrAqYUgKBpBi8QIgo
+i5DFsOmisMn5EZQlXhIlFsGixWaIut3tYC7DZnP+1xk4gygiVRXGHMqY1UJVJZrA
+SFEAWH9JVwDRZRcUz5JCQSQ6AIpEJZ4SDIHBvRF1u1nFQa3X3N2nh/OXlJSkaxoi
+djhdMwtYqELLdEzNzGdreY5TaPtdNE6ksFdM1cBDm4AaDOuMHKsoppYdNMMMFVP+
+i5qs+Di6uDBo0UDQVYhYkgF73D602N0tUcaApwybgjVdY/yQyg6IggyRxYIY8Yom
+snNARQNpGFDII0EhGgMMkYgJ+QcjBDwLSnKZKYMXJk6RxbY1djwnwRM30NOvbx/3
+BnkGDkj8+17NafI+8P4cO/deYnfuxsiAkWlDDjR82j5hcqAFKj+kHera3D/p7ae7
+9jzTubl5Yenh8vmwcsTm2ddmn237duqJcaubJkaStqydfmnfzdNP+qBv+KkyrjpU
+u3fY3dabd+be/27hStuT5W29/Nvp462NB5pnviyXXvygo370xold7ftDl0/V7Uk7
+7//l8ITYYqtjUHw0s6Fpit7YI5/cWjJjas+Wqlt785y2cErHoaWJ+Y0pCf0K/ky7
+cbTuCPdu9jrjTHvn3Asv1s9PyMo+sjv5bPOx6P7K/c+2fbl2yVjvpicmHVbllu3f
+k/jtGYT7pHL15GQpdcPyFdGcW32HrIjN60jZdfVKKLXJk/TROBytKR2143bPir6o
+YokQ+/FOYGf30J8+r1glv1XzSoWcs71reHZSctW0stQFRyfs7l66/M1b23YMvg71
+/qsC086vX5Ogyt72Nc6JewcvVbxWhs+2LIzY9ZN2qmvLfZ211UbWlfOZKzcN+/rq
+rlnfVPWZkjD2Rt3N8LmMg3mvyn+02LvmzMp4MC5j9VMfD+8+qFx7dCuc/s6he95F
+kX3jk4yeD2fGLfbWjLozoiEvcD1tfWr5++PXOdE0vnp+9PFB1WXH9i4JZqbiI/fr
+h/7e0Jl9YkxO29UzJ5P9W8cPbl5z++KqK7MT5yh3M5c9D1vLadEX4eOfHZs35rmU
+ZY/0NI/c4Hvhwt1ttV2Ta2Mz4v8C6HsDcg==
+=A7Yc
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/toringe
+
+==================================================================
+
