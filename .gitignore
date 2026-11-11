@@ -1,9 +1,3 @@
 .DS_Store
-/public/
-/resources/_gen/
-/assets/jsconfig.json
-hugo_stats.json
-hugo.exe
-hugo.darwin
-hugo.linux
-/.hugo_build.lock
+# design tooling scratch (screenshots, direction sheet)
+.taste-skill/
