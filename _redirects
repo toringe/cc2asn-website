@@ -1,7 +1,7 @@
 # Cloudflare redirects. First match wins.
 # Old Hugo URLs → sections of the single page.
-/pages/about     /#data   301
-/pages/about/    /#data   301
+/pages/about     /#glossary   301
+/pages/about/    /#glossary   301
 /pages/whois     /#usage  301
 /pages/whois/    /#usage  301
 /pages/*         /        301

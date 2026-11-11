@@ -68,7 +68,7 @@
         "spatialCoverage": { "@type": "Place", "name": "Worldwide" },
         "isBasedOn": [
           "https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest",
-          "https://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-latest",
+          "https://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest",
           "https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest",
           "https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest",
           "https://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest"
@@ -76,6 +76,16 @@
         "distribution": [
           { "@type": "DataDownload", "encodingFormat": "text/plain", "contentUrl": "https://api.cc2asn.com/ALL/NO" },
           { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://api.cc2asn.com/ALL/NO?format=json" }
+        ]
+      },
+      {
+        "@type": "DefinedTermSet",
+        "@id": "https://cc2asn.com/#glossary",
+        "name": "CC2ASN glossary",
+        "hasDefinedTerm": [
+          { "@type": "DefinedTerm", "@id": "https://cc2asn.com/#term-asn", "name": "AS number", "alternateName": "ASN", "description": "An autonomous system is a group of networks run under one routing policy, usually by an internet provider, a company or a university. Its number, the ASN, is a 16- or 32-bit integer, written plain (65551) or dotted (1.15).", "url": "https://cc2asn.com/#term-asn" },
+          { "@type": "DefinedTerm", "@id": "https://cc2asn.com/#term-prefix", "name": "Prefix", "alternateName": "IP prefix", "description": "A block of IP addresses, written as its first address, a slash and the number of fixed bits: 192.0.2.0/24 holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.", "url": "https://cc2asn.com/#term-prefix" },
+          { "@type": "DefinedTerm", "@id": "https://cc2asn.com/#term-cc", "name": "Country code", "alternateName": "ISO 3166-1 alpha-2", "description": "The two-letter ISO 3166-1 alpha-2 code the registry has on file for the holder, such as NO for Norway. Territories have codes of their own: SJ for Svalbard and Jan Mayen, PS for Palestine.", "url": "https://cc2asn.com/#term-cc" }
         ]
       },
       {
@@ -103,7 +113,7 @@
   <link rel="preload" href="assets/fonts/gugi-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/base.css?v=20261111f">
   <link rel="stylesheet" href="assets/stage.css?v=20261111f">
-  <link rel="stylesheet" href="assets/site.css?v=20261111f">
+  <link rel="stylesheet" href="assets/site.css?v=20261111g">
 </head>
 <body data-entrance="aperture">
   <a class="skip" href="#main">Skip to content</a>
@@ -213,6 +223,34 @@
           </div>
         </div>
       </div>
+    </section>
+
+    <!-- Glossary: the three words the service is built on -->
+    <section class="glossary wrap section" id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title" class="head">The words, briefly</h2>
+      <dl class="glossary__list grid">
+        <div class="glossary__item">
+          <dt><dfn id="term-asn">AS number</dfn></dt>
+          <dd>
+            <p>An autonomous system is a group of networks run under one routing policy, usually by an internet provider, a company or a university. Its number, the ASN, is a 16- or 32-bit integer, written plain (<code>65551</code>) or dotted (<code>1.15</code>).</p>
+            <p><a class="link-plain" href="https://en.wikipedia.org/wiki/Autonomous_system_(Internet)">Read more</a></p>
+          </dd>
+        </div>
+        <div class="glossary__item">
+          <dt><dfn id="term-prefix">Prefix</dfn></dt>
+          <dd>
+            <p>A block of IP addresses, written as its first address, a slash and the number of fixed bits: <code>192.0.2.0/24</code> holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.</p>
+            <p><a class="link-plain" href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Read more</a></p>
+          </dd>
+        </div>
+        <div class="glossary__item">
+          <dt><dfn id="term-cc">Country code</dfn></dt>
+          <dd>
+            <p>The two-letter ISO 3166-1 alpha-2 code the registry has on file for the holder, such as <code>NO</code> for Norway. Territories have codes of their own: <code>SJ</code> for Svalbard and Jan Mayen, <code>PS</code> for Palestine.</p>
+            <p><a class="link-plain" href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">Read more</a></p>
+          </dd>
+        </div>
+      </dl>
     </section>
 
     <!-- Uses: pick a use case, read how the lists help -->
@@ -639,6 +677,7 @@
         <h2 id="foot-title" class="sr-only">CC2ASN</h2>
         <ul role="list">
           <li><a href="#data">Data</a></li>
+          <li><a href="#glossary">Glossary</a></li>
           <li><a href="#uses">Uses</a></li>
           <li><a href="#usage">Usage</a></li>
           <li><a href="#faq">FAQ</a></li>
@@ -652,8 +691,22 @@
           <li><a class="link-plain" href="https://github.com/toringe/cc2asn">GitHub</a></li>
           <li><a class="link-plain" href="https://www.linkedin.com/in/torskaar">LinkedIn</a></li>
         </ul>
+        <div class="foot__sources">
+          <h3 id="sources-title">Sources</h3>
+          <ul role="list" aria-labelledby="sources-title">
+            <li><a class="link-plain" href="https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest">AFRINIC</a></li>
+            <li><a class="link-plain" href="https://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest">APNIC</a></li>
+            <li><a class="link-plain" href="https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest">ARIN</a></li>
+            <li><a class="link-plain" href="https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest">LACNIC</a></li>
+            <li><a class="link-plain" href="https://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest">RIPE NCC</a></li>
+            <li><a class="link-plain" href="https://ftp.ripe.net/ripe/stats/RIR-Statistics-Exchange-Format.txt">File format</a></li>
+          </ul>
+        </div>
       </div>
-      <p class="foot__legal">© 2026 CC2ASN. Data from the AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC delegation statistics.</p>
+      <div class="foot__legal">
+        <p>© 2026 CC2ASN. Data from the AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC delegation statistics.</p>
+        <p>Provided as is, for general information, with no guarantee that it is complete, accurate or current. The registries record the country where numbers were first allocated, not where they are in use today. CC2ASN accepts no liability for decisions made or actions taken based on the data.</p>
+      </div>
     </div>
   </footer>
 

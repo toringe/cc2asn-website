@@ -188,6 +188,20 @@ pre { margin: 0; white-space: pre-wrap; }
   .sef { grid-column: 1 / 13; }
 }
 
+/* ---------- glossary: three terms side by side ---------- */
+.glossary__list { margin: 48px 0 0; row-gap: 40px; }
+.glossary__item { grid-column: span 4; border-top: 1px solid color-mix(in srgb, var(--muted) 35%, transparent); padding-top: 1.25rem; }
+.glossary__item dt { font-size: var(--step-sub); font-weight: 500; line-height: 1.1; letter-spacing: -0.01em; }
+.glossary__item dfn { font-style: normal; }
+.glossary__item dd { margin: 0.9rem 0 0; color: var(--muted); }
+.glossary__item dd code { font-size: 0.9em; color: var(--ink); }
+.glossary__item dd a { color: var(--ink); }
+.glossary__item dd a:hover, .glossary__item dd a:focus-visible { color: var(--accent); }
+@media (max-width: 63.99em) {
+  .glossary__item { grid-column: 1 / 13; }
+  .glossary__item dd p:first-child { max-width: 62ch; }
+}
+
 /* ---------- uses: pick a use case, read how it helps ---------- */
 .uses__title { font-size: var(--step-head); font-weight: 500; line-height: 1.05; letter-spacing: -0.02em; }
 .uses__hint { margin-top: 1rem; font-size: var(--step-lead); line-height: 1.35; color: var(--muted); }
@@ -333,7 +347,10 @@ pre { margin: 0; white-space: pre-wrap; }
 .foot__social { display: flex; gap: 1.25rem; }
 .foot ::selection { background: var(--bg); color: var(--ink); }
 .foot :focus-visible { outline-color: var(--bg); }
-.foot__legal { grid-column: 1 / 13; max-width: none; font-size: 0.9375rem; }
+.foot__sources h3 { font-size: var(--step-body); font-weight: 600; line-height: 1.25; }
+.foot__sources ul { display: flex; flex-wrap: wrap; gap: 0.35rem 1.25rem; margin-top: 0.5rem; }
+.foot__legal { grid-column: 1 / 13; font-size: 0.9375rem; }
+.foot__legal p { max-width: 90ch; }
 @media (max-width: 47.99em) {
   .foot__links, .foot__side { grid-column: 1 / 13; }
 }
