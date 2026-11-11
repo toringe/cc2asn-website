@@ -3,15 +3,14 @@
 // A scene is a tall section whose stage sticks to the viewport while the page scrolls past it; a GSAP
 // timeline is scrubbed by that scroll. The page always scrolls natively (no wheel capture), the
 // scrollbar always tells the truth, and the finished composition is what reduced motion, no script and
-// a failed CDN all show.
+// a failed script load all show.
 //
-// Load at the end of <body>, in this order (versions pinned):
-//   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
-//   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
-//   <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/SplitText.min.js"></script>  (only if a scene splits text)
-//   <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>     (optional smoothing)
-//   <script src="assets/scenes/stage.js"></script>
-//   <script src="assets/scenes/<scene>.js"></script>
+// Load at the end of <body>, deferred, in this order. GSAP is self-hosted in assets/vendor/ (see the
+// README there); this site uses neither SplitText nor Lenis, so add them to assets/vendor/ if a scene needs them:
+//   <script defer src="assets/vendor/gsap.min.js?v=3.15.0"></script>
+//   <script defer src="assets/vendor/ScrollTrigger.min.js?v=3.15.0"></script>
+//   <script defer src="assets/stage.js"></script>
+//   <script defer src="assets/<scene>.js"></script>
 // and keep the one-line <script>document.documentElement.classList.add('js')</script> in <head>.
 //
 //   Stage.smooth()                         weighted wheel scrolling (Lenis), off for touch and reduced motion
