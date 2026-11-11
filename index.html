@@ -5,7 +5,94 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CC2ASN: every AS number and IP prefix of a country</title>
   <meta name="description" content="Look up all AS numbers, IPv4 and IPv6 prefixes registered to any country, straight from the five regional internet registries. Free over HTTP or whois.">
+  <link rel="canonical" href="https://cc2asn.com/">
   <meta name="theme-color" content="#10150f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CC2ASN">
+  <meta property="og:url" content="https://cc2asn.com/">
+  <meta property="og:title" content="CC2ASN: every AS number and IP prefix of a country">
+  <meta property="og:description" content="Look up all AS numbers, IPv4 and IPv6 prefixes registered to any country, straight from the five regional internet registries. Free over HTTP or whois.">
+  <meta property="og:image" content="https://cc2asn.com/assets/img/og-cc2asn.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CC2ASN: Country code in. Networks out.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CC2ASN: every AS number and IP prefix of a country">
+  <meta name="twitter:description" content="Look up all AS numbers, IPv4 and IPv6 prefixes registered to any country, straight from the five regional internet registries. Free over HTTP or whois.">
+  <meta name="twitter:image" content="https://cc2asn.com/assets/img/og-cc2asn.png">
+  <meta name="twitter:image:alt" content="CC2ASN: Country code in. Networks out.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://cc2asn.com/#org",
+        "name": "CC2ASN",
+        "url": "https://cc2asn.com/",
+        "logo": "https://cc2asn.com/assets/android-chrome-512x512.png",
+        "sameAs": ["https://github.com/toringe/cc2asn"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://cc2asn.com/#website",
+        "name": "CC2ASN",
+        "url": "https://cc2asn.com/",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://cc2asn.com/#org" }
+      },
+      {
+        "@type": "WebAPI",
+        "@id": "https://cc2asn.com/#api",
+        "name": "CC2ASN API",
+        "description": "A lookup service for AS numbers and IP prefixes registered to any country. Send a two-letter country code and get all ASNs, IPv4 or IPv6 prefixes registered to that country, as text or JSON over HTTPS, or over whois on TCP port 43.",
+        "url": "https://api.cc2asn.com/",
+        "documentation": "https://cc2asn.com/#usage",
+        "provider": { "@id": "https://cc2asn.com/#org" },
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free, no sign-up: 100 queries per day and 30 per minute." }
+      },
+      {
+        "@type": "Dataset",
+        "@id": "https://cc2asn.com/#dataset",
+        "name": "CC2ASN: AS numbers and IP prefixes by country",
+        "description": "Every AS number, IPv4 prefix and IPv6 prefix registered to each country, built daily from the delegation statistics files of the five regional internet registries (AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC). Records are filed by the ISO 3166-1 alpha-2 country code the registry has on file for the holder. This is registration data, not geolocation.",
+        "url": "https://cc2asn.com/",
+        "keywords": ["ASN", "autonomous system number", "IP prefix", "IPv4", "IPv6", "CIDR", "country code", "ISO 3166-1", "regional internet registry", "RIR delegation statistics", "geo-blocking"],
+        "creator": { "@id": "https://cc2asn.com/#org" },
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
+        "spatialCoverage": { "@type": "Place", "name": "Worldwide" },
+        "isBasedOn": [
+          "https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest",
+          "https://ftp.apnic.net/pub/stats/apnic/delegated-apnic-extended-latest",
+          "https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest",
+          "https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest",
+          "https://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest"
+        ],
+        "distribution": [
+          { "@type": "DataDownload", "encodingFormat": "text/plain", "contentUrl": "https://api.cc2asn.com/ALL/NO" },
+          { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://api.cc2asn.com/ALL/NO?format=json" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://cc2asn.com/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "How fresh is the data?", "acceptedAnswer": { "@type": "Answer", "text": "The registries' files are fetched every day and sorted by country. A lookup always returns the latest day." } },
+          { "@type": "Question", "name": "Does registered mean located?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is the country the registry has on file for the holder. A network can be used anywhere; this is registration, not geolocation." } },
+          { "@type": "Question", "name": "What does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "Nothing. Each person gets 100 queries a day and 30 a minute, with no account and no key." } },
+          { "@type": "Question", "name": "Can I look up an earlier date?", "acceptedAnswer": { "@type": "Answer", "text": "No. The API serves the latest day only; dated paths answer 404." } },
+          { "@type": "Question", "name": "What if a code is unknown?", "acceptedAnswer": { "@type": "Answer", "text": "You get a 404 with the path that was not found. Use the two-letter ISO 3166 codes the registries use." } },
+          { "@type": "Question", "name": "Why does whois cut my answer short?", "acceptedAnswer": { "@type": "Answer", "text": "Some whois clients stop on long answers. Send the same query with netcat: echo ipv4 dk | nc cc2asn.com 43" } }
+        ]
+      }
+    ]
+  }
+  </script>
   <link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32">
   <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
@@ -42,7 +129,7 @@
         <div class="hero__words">
           <p class="hero__eyebrow brand"><img class="brand__logo" src="assets/img/cc2asn-logo-red.webp" alt="" width="44" height="45"><span class="brand__name">CC<span class="brand__two">2</span>ASN</span></p>
           <h1 id="hero-title" class="hero__title" data-e="headline">Country code in.<br>Networks out.</h1>
-          <p class="hero__lead" data-e="lead">Every AS number and IP prefix registered to a country.</p>
+          <p class="hero__lead" data-e="lead">A lookup service for AS-numbers and prefixes belonging to any given country in the world. Simply provide country codes as input and you’ll get all ASNs, IPv4 or IPv6 addresses registered to that country.</p>
           <p class="hero__action" data-e="action"><a class="btn" href="#usage" data-hero-action>Build a query</a></p>
         </div>
 
