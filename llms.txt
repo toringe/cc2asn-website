@@ -1,0 +1,49 @@
+# CC2ASN
+
+> CC2ASN is a free lookup service that returns every AS number (ASN), IPv4 prefix and IPv6 prefix (IP range) registered to a country. Send a two-letter ISO 3166-1 alpha-2 country code over HTTPS or whois and get the full list back. The data is rebuilt daily from the delegation statistics files of the five regional internet registries: AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC.
+
+Important: this is registration data, not geolocation. A record shows the country the registry has on file for the holder of a network, not where its addresses are in use today.
+
+## API (HTTPS)
+
+Base URL: `https://api.cc2asn.com/`. Country codes work in upper or lower case. Answers are plain text, one record per line; add `?format=json` for JSON.
+
+- `GET /NO`: every AS number registered to Norway
+- `GET /IPV4/NO`: every IPv4 prefix registered to Norway, in CIDR notation
+- `GET /IPV6/NO`: every IPv6 prefix registered to Norway
+- `GET /ALL/NO`: AS numbers, IPv4 and IPv6 prefixes together
+- `GET /ALL/NO?format=json`: the same as JSON
+
+AS numbers come back with the AS prefix (`AS224`), prefixes in CIDR notation (`2.148.0.0/14`). JSON answers have the shape `{"cc": "NO", "type": "ALL", "date": "latest", "records": [...]}`.
+
+Example: `curl https://api.cc2asn.com/IPV4/NO`
+
+## whois (TCP port 43)
+
+Host: `cc2asn.com`, port 43. The query is the record type and the country code: `no`, `ipv4 no`, `ipv6 no` or `all no`.
+
+- `whois -h cc2asn.com 'ipv4 no'`
+- `echo ipv4 no | nc cc2asn.com 43` (use netcat if your whois client cuts long answers short)
+
+## Limits and behaviour
+
+- Free, with no account and no key: 100 queries a day and 30 a minute per person.
+- Only the latest day is served; dated paths answer 404.
+- An unknown country code answers 404. A few territories have no registered networks and also answer 404.
+
+## License
+
+The data CC2ASN serves is licensed under CC BY 4.0 (https://creativecommons.org/licenses/by/4.0/). Reuse it freely, including commercially, and credit it as: "Data: CC2ASN (www.cc2asn.com), CC BY 4.0". It comes with no warranty.
+
+## Terms
+
+- AS number (ASN): the number of an autonomous system, a group of networks run under one routing policy, usually by an internet provider, a company or a university. A 16- or 32-bit integer, written plain (65551) or dotted (1.15).
+- Prefix: a block of IP addresses, also called an IP range or IP block, in CIDR notation, for example 192.0.2.0/24.
+- Country code: the ISO 3166-1 alpha-2 code the registry has on file for the holder, for example NO for Norway, SJ for Svalbard and Jan Mayen.
+
+## Links
+
+- [Website](https://www.cc2asn.com/): what the service does, a query builder and a FAQ
+- [Source code](https://github.com/toringe/cc2asn)
+- [RIR statistics exchange format](https://ftp.ripe.net/ripe/stats/RIR-Statistics-Exchange-Format.txt): the format of the registry files CC2ASN reads
+- [Report an issue](https://github.com/toringe/cc2asn/issues)

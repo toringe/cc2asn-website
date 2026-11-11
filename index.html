@@ -3,25 +3,25 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CC2ASN: every AS number and IP prefix of a country</title>
-  <meta name="description" content="Look up all AS numbers, IPv4 and IPv6 prefixes registered to any country, straight from the five regional internet registries. Free over HTTP or whois.">
-  <link rel="canonical" href="https://cc2asn.com/">
+  <title>CC2ASN: AS numbers and IP ranges by country</title>
+  <meta name="description" content="Look up every AS number and IPv4 and IPv6 range (prefix) registered to any country, from the five regional internet registries. Free over HTTP or whois.">
+  <link rel="canonical" href="https://www.cc2asn.com/">
   <meta name="theme-color" content="#10150f">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="CC2ASN">
-  <meta property="og:url" content="https://cc2asn.com/">
-  <meta property="og:title" content="CC2ASN: every AS number and IP prefix of a country">
-  <meta property="og:description" content="Look up all AS numbers, IPv4 and IPv6 prefixes registered to any country, straight from the five regional internet registries. Free over HTTP or whois.">
-  <meta property="og:image" content="https://cc2asn.com/assets/img/og-cc2asn.png">
+  <meta property="og:url" content="https://www.cc2asn.com/">
+  <meta property="og:title" content="CC2ASN: AS numbers and IP ranges by country">
+  <meta property="og:description" content="Look up every AS number and IPv4 and IPv6 range (prefix) registered to any country, from the five regional internet registries. Free over HTTP or whois.">
+  <meta property="og:image" content="https://www.cc2asn.com/assets/img/og-cc2asn.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="CC2ASN: Country code in. Networks out.">
   <meta property="og:locale" content="en_US">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="CC2ASN: every AS number and IP prefix of a country">
-  <meta name="twitter:description" content="Look up all AS numbers, IPv4 and IPv6 prefixes registered to any country, straight from the five regional internet registries. Free over HTTP or whois.">
-  <meta name="twitter:image" content="https://cc2asn.com/assets/img/og-cc2asn.png">
+  <meta name="twitter:title" content="CC2ASN: AS numbers and IP ranges by country">
+  <meta name="twitter:description" content="Look up every AS number and IPv4 and IPv6 range (prefix) registered to any country, from the five regional internet registries. Free over HTTP or whois.">
+  <meta name="twitter:image" content="https://www.cc2asn.com/assets/img/og-cc2asn.png">
   <meta name="twitter:image:alt" content="CC2ASN: Country code in. Networks out.">
 
   <script type="application/ld+json">
@@ -30,39 +30,41 @@
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://cc2asn.com/#org",
+        "@id": "https://www.cc2asn.com/#org",
         "name": "CC2ASN",
-        "url": "https://cc2asn.com/",
-        "logo": "https://cc2asn.com/assets/android-chrome-512x512.png",
+        "url": "https://www.cc2asn.com/",
+        "logo": "https://www.cc2asn.com/assets/android-chrome-512x512.png",
         "sameAs": ["https://github.com/toringe/cc2asn"]
       },
       {
         "@type": "WebSite",
-        "@id": "https://cc2asn.com/#website",
+        "@id": "https://www.cc2asn.com/#website",
         "name": "CC2ASN",
-        "url": "https://cc2asn.com/",
+        "url": "https://www.cc2asn.com/",
         "inLanguage": "en",
-        "publisher": { "@id": "https://cc2asn.com/#org" }
+        "publisher": { "@id": "https://www.cc2asn.com/#org" }
       },
       {
         "@type": "WebAPI",
-        "@id": "https://cc2asn.com/#api",
+        "@id": "https://www.cc2asn.com/#api",
         "name": "CC2ASN API",
         "description": "A lookup service for AS numbers and IP prefixes registered to any country. Send a two-letter country code and get all ASNs, IPv4 or IPv6 prefixes registered to that country, as text or JSON over HTTPS, or over whois on TCP port 43.",
         "url": "https://api.cc2asn.com/",
-        "documentation": "https://cc2asn.com/#usage",
-        "provider": { "@id": "https://cc2asn.com/#org" },
+        "documentation": "https://www.cc2asn.com/#usage",
+        "provider": { "@id": "https://www.cc2asn.com/#org" },
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free, no sign-up: 100 queries per day and 30 per minute." }
       },
       {
         "@type": "Dataset",
-        "@id": "https://cc2asn.com/#dataset",
-        "name": "CC2ASN: AS numbers and IP prefixes by country",
+        "@id": "https://www.cc2asn.com/#dataset",
+        "name": "CC2ASN: AS numbers and IP ranges by country",
         "description": "Every AS number, IPv4 prefix and IPv6 prefix registered to each country, built daily from the delegation statistics files of the five regional internet registries (AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC). Records are filed by the ISO 3166-1 alpha-2 country code the registry has on file for the holder. This is registration data, not geolocation.",
-        "url": "https://cc2asn.com/",
-        "keywords": ["ASN", "autonomous system number", "IP prefix", "IPv4", "IPv6", "CIDR", "country code", "ISO 3166-1", "regional internet registry", "RIR delegation statistics", "geo-blocking"],
-        "creator": { "@id": "https://cc2asn.com/#org" },
+        "url": "https://www.cc2asn.com/",
+        "keywords": ["ASN", "autonomous system number", "IP prefix", "IP range", "IP block", "IP ranges by country", "IPv4", "IPv6", "CIDR", "country code", "ISO 3166-1", "regional internet registry", "RIR delegation statistics", "geo-blocking"],
+        "creator": { "@id": "https://www.cc2asn.com/#org" },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "creditText": "Data: CC2ASN (www.cc2asn.com), CC BY 4.0",
         "isAccessibleForFree": true,
         "inLanguage": "en",
         "spatialCoverage": { "@type": "Place", "name": "Worldwide" },
@@ -80,17 +82,17 @@
       },
       {
         "@type": "DefinedTermSet",
-        "@id": "https://cc2asn.com/#glossary",
+        "@id": "https://www.cc2asn.com/#glossary",
         "name": "CC2ASN glossary",
         "hasDefinedTerm": [
-          { "@type": "DefinedTerm", "@id": "https://cc2asn.com/#term-asn", "name": "AS number", "alternateName": "ASN", "description": "An autonomous system is a group of networks run under one routing policy, usually by an internet provider, a company or a university. Its number, the ASN, is a 16- or 32-bit integer, written plain (65551) or dotted (1.15).", "url": "https://cc2asn.com/#term-asn" },
-          { "@type": "DefinedTerm", "@id": "https://cc2asn.com/#term-prefix", "name": "Prefix", "alternateName": "IP prefix", "description": "A block of IP addresses, written as its first address, a slash and the number of fixed bits: 192.0.2.0/24 holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.", "url": "https://cc2asn.com/#term-prefix" },
-          { "@type": "DefinedTerm", "@id": "https://cc2asn.com/#term-cc", "name": "Country code", "alternateName": "ISO 3166-1 alpha-2", "description": "The two-letter ISO 3166-1 alpha-2 code the registry has on file for the holder, such as NO for Norway. Territories have codes of their own: SJ for Svalbard and Jan Mayen, PS for Palestine.", "url": "https://cc2asn.com/#term-cc" }
+          { "@type": "DefinedTerm", "@id": "https://www.cc2asn.com/#term-asn", "name": "AS number", "alternateName": "ASN", "description": "An autonomous system is a group of networks run under one routing policy, usually by an internet provider, a company or a university. Its number, the ASN, is a 16- or 32-bit integer, written plain (65551) or dotted (1.15).", "url": "https://www.cc2asn.com/#term-asn" },
+          { "@type": "DefinedTerm", "@id": "https://www.cc2asn.com/#term-prefix", "name": "Prefix", "alternateName": ["IP prefix", "IP range", "IP block"], "description": "A block of IP addresses, also called an IP range or IP block, written as its first address, a slash and the number of fixed bits: 192.0.2.0/24 holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.", "url": "https://www.cc2asn.com/#term-prefix" },
+          { "@type": "DefinedTerm", "@id": "https://www.cc2asn.com/#term-cc", "name": "Country code", "alternateName": "ISO 3166-1 alpha-2", "description": "The two-letter ISO 3166-1 alpha-2 code the registry has on file for the holder, such as NO for Norway. Territories have codes of their own: SJ for Svalbard and Jan Mayen, PS for Palestine.", "url": "https://www.cc2asn.com/#term-cc" }
         ]
       },
       {
         "@type": "FAQPage",
-        "@id": "https://cc2asn.com/#faq",
+        "@id": "https://www.cc2asn.com/#faq",
         "mainEntity": [
           { "@type": "Question", "name": "How fresh is the data?", "acceptedAnswer": { "@type": "Answer", "text": "The registries' files are fetched every day and sorted by country. A lookup always returns the latest day." } },
           { "@type": "Question", "name": "Does registered mean located?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is the country the registry has on file for the holder. A network can be used anywhere; this is registration, not geolocation." } },
@@ -139,7 +141,7 @@
         <div class="hero__words">
           <p class="hero__eyebrow brand"><img class="brand__logo" src="assets/img/cc2asn-logo-red.webp" alt="" width="44" height="45"><span class="brand__name">CC<span class="brand__two">2</span>ASN</span></p>
           <h1 id="hero-title" class="hero__title" data-e="headline">Country code in.<br>Networks out.</h1>
-          <p class="hero__lead" data-e="lead">A lookup service for AS-numbers and prefixes belonging to any given country in the world. Simply provide country codes as input and you’ll get all ASNs, IPv4 or IPv6 addresses registered to that country.</p>
+          <p class="hero__lead" data-e="lead">A lookup service for AS numbers and prefixes belonging to any given country in the world. Simply provide country codes as input and you’ll get all ASNs, IPv4 or IPv6 addresses registered to that country.</p>
           <p class="hero__action" data-e="action"><a class="btn" href="#usage" data-hero-action>Build a query</a></p>
         </div>
 
@@ -239,7 +241,7 @@
         <div class="glossary__item">
           <dt><dfn id="term-prefix">Prefix</dfn></dt>
           <dd>
-            <p>A block of IP addresses, written as its first address, a slash and the number of fixed bits: <code>192.0.2.0/24</code> holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.</p>
+            <p>A block of IP addresses, also called an IP range or IP block, written as its first address, a slash and the number of fixed bits: <code>192.0.2.0/24</code> holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.</p>
             <p><a class="link-plain" href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Read more</a></p>
           </dd>
         </div>
@@ -704,7 +706,7 @@
         </div>
       </div>
       <div class="foot__legal">
-        <p>© 2026 CC2ASN. Data from the AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC delegation statistics.</p>
+        <p>© 2026 CC2ASN. Data from the AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC delegation statistics. The lists CC2ASN serves are free to reuse under <a class="link-plain" rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; please credit CC2ASN.</p>
         <p class="foot__disclaimer">Provided as is, for general information, with no guarantee that it is complete, accurate or current. The registries record the country where numbers were first allocated, not where they are in use today. CC2ASN accepts no liability for decisions made or actions taken based on the data.</p>
       </div>
     </div>

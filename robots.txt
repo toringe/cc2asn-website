@@ -29,4 +29,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://cc2asn.com/sitemap.xml
+Sitemap: https://www.cc2asn.com/sitemap.xml
