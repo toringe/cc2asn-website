@@ -1,3 +1,8 @@
 .DS_Store
 # design tooling scratch (screenshots, direction sheet)
 .taste-skill/
+
+# local build leftovers / tooling
+.venv/
+node_modules/
+.wrangler/

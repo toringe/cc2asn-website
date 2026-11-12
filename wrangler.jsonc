@@ -1,0 +1,11 @@
+{
+  "name": "cc2asn-website",
+  "compatibility_date": "2026-11-01",
+  // Static assets only: no Worker script. _redirects in public/ is honoured.
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+  // Add at cutover (step 4), once www.cc2asn.com is removed from Pages:
+  // "routes": [{ "pattern": "www.cc2asn.com", "custom_domain": true }]
+}
