@@ -1,0 +1,723 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CC2ASN: AS numbers and IP ranges by country</title>
+  <meta name="description" content="Look up every AS number and IPv4 and IPv6 range (prefix) registered to any country, from the five regional internet registries. Free over HTTP or whois.">
+  <link rel="canonical" href="https://www.cc2asn.com/">
+  <meta name="theme-color" content="#10150f">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="CC2ASN">
+  <meta property="og:url" content="https://www.cc2asn.com/">
+  <meta property="og:title" content="CC2ASN: AS numbers and IP ranges by country">
+  <meta property="og:description" content="Look up every AS number and IPv4 and IPv6 range (prefix) registered to any country, from the five regional internet registries. Free over HTTP or whois.">
+  <meta property="og:image" content="https://www.cc2asn.com/assets/img/og-cc2asn.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="CC2ASN: Country code in. Networks out.">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="CC2ASN: AS numbers and IP ranges by country">
+  <meta name="twitter:description" content="Look up every AS number and IPv4 and IPv6 range (prefix) registered to any country, from the five regional internet registries. Free over HTTP or whois.">
+  <meta name="twitter:image" content="https://www.cc2asn.com/assets/img/og-cc2asn.png">
+  <meta name="twitter:image:alt" content="CC2ASN: Country code in. Networks out.">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.cc2asn.com/#org",
+        "name": "CC2ASN",
+        "url": "https://www.cc2asn.com/",
+        "logo": "https://www.cc2asn.com/assets/android-chrome-512x512.png",
+        "sameAs": ["https://github.com/toringe/cc2asn"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://www.cc2asn.com/#website",
+        "name": "CC2ASN",
+        "url": "https://www.cc2asn.com/",
+        "inLanguage": "en",
+        "publisher": { "@id": "https://www.cc2asn.com/#org" }
+      },
+      {
+        "@type": "WebAPI",
+        "@id": "https://www.cc2asn.com/#api",
+        "name": "CC2ASN API",
+        "description": "A lookup service for AS numbers and IP prefixes registered to any country. Send a two-letter country code and get all ASNs, IPv4 or IPv6 prefixes registered to that country, as text or JSON over HTTPS, or over whois on TCP port 43.",
+        "url": "https://api.cc2asn.com/",
+        "documentation": "https://www.cc2asn.com/#usage",
+        "provider": { "@id": "https://www.cc2asn.com/#org" },
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD", "description": "Free, no sign-up: 100 queries per day and 30 per minute." }
+      },
+      {
+        "@type": "Dataset",
+        "@id": "https://www.cc2asn.com/#dataset",
+        "name": "CC2ASN: AS numbers and IP ranges by country",
+        "description": "Every AS number, IPv4 prefix and IPv6 prefix registered to each country, built daily from the delegation statistics files of the five regional internet registries (AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC). Records are filed by the ISO 3166-1 alpha-2 country code the registry has on file for the holder. This is registration data, not geolocation.",
+        "url": "https://www.cc2asn.com/",
+        "keywords": ["ASN", "autonomous system number", "IP prefix", "IP range", "IP block", "IP ranges by country", "IPv4", "IPv6", "CIDR", "country code", "ISO 3166-1", "regional internet registry", "RIR delegation statistics", "geo-blocking"],
+        "creator": { "@id": "https://www.cc2asn.com/#org" },
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "creditText": "Data: CC2ASN (www.cc2asn.com), CC BY 4.0",
+        "isAccessibleForFree": true,
+        "inLanguage": "en",
+        "spatialCoverage": { "@type": "Place", "name": "Worldwide" },
+        "isBasedOn": [
+          "https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest",
+          "https://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest",
+          "https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest",
+          "https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest",
+          "https://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest"
+        ],
+        "distribution": [
+          { "@type": "DataDownload", "encodingFormat": "text/plain", "contentUrl": "https://api.cc2asn.com/ALL/NO" },
+          { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://api.cc2asn.com/ALL/NO?format=json" }
+        ]
+      },
+      {
+        "@type": "DefinedTermSet",
+        "@id": "https://www.cc2asn.com/#glossary",
+        "name": "CC2ASN glossary",
+        "hasDefinedTerm": [
+          { "@type": "DefinedTerm", "@id": "https://www.cc2asn.com/#term-asn", "name": "AS number", "alternateName": "ASN", "description": "An autonomous system is a group of networks run under one routing policy, usually by an internet provider, a company or a university. Its number, the ASN, is a 16- or 32-bit integer, written plain (65551) or dotted (1.15).", "url": "https://www.cc2asn.com/#term-asn" },
+          { "@type": "DefinedTerm", "@id": "https://www.cc2asn.com/#term-prefix", "name": "Prefix", "alternateName": ["IP prefix", "IP range", "IP block"], "description": "A block of IP addresses, also called an IP range or IP block, written as its first address, a slash and the number of fixed bits: 192.0.2.0/24 holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.", "url": "https://www.cc2asn.com/#term-prefix" },
+          { "@type": "DefinedTerm", "@id": "https://www.cc2asn.com/#term-cc", "name": "Country code", "alternateName": "ISO 3166-1 alpha-2", "description": "The two-letter ISO 3166-1 alpha-2 code the registry has on file for the holder, such as NO for Norway. Territories have codes of their own: SJ for Svalbard and Jan Mayen, PS for Palestine.", "url": "https://www.cc2asn.com/#term-cc" }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.cc2asn.com/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "How fresh is the data?", "acceptedAnswer": { "@type": "Answer", "text": "The registries' files are fetched every day and sorted by country. A lookup always returns the latest day." } },
+          { "@type": "Question", "name": "Does registered mean located?", "acceptedAnswer": { "@type": "Answer", "text": "No. It is the country the registry has on file for the holder. A network can be used anywhere; this is registration, not geolocation." } },
+          { "@type": "Question", "name": "What does it cost?", "acceptedAnswer": { "@type": "Answer", "text": "Nothing. Each person gets 100 queries a day and 30 a minute, with no account and no key." } },
+          { "@type": "Question", "name": "Can I look up an earlier date?", "acceptedAnswer": { "@type": "Answer", "text": "No. The API serves the latest day only; dated paths answer 404." } },
+          { "@type": "Question", "name": "What if a code is unknown?", "acceptedAnswer": { "@type": "Answer", "text": "You get a 404 with the path that was not found. Use the two-letter ISO 3166 codes the registries use." } },
+          { "@type": "Question", "name": "Why does whois cut my answer short?", "acceptedAnswer": { "@type": "Answer", "text": "Some whois clients stop on long answers. Send the same query with netcat: echo ipv4 dk | nc cc2asn.com 43" } }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" href="assets/favicon.ico" sizes="16x16 32x32">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/apple-touch-icon.png">
+  <link rel="manifest" href="assets/site.webmanifest">
+  <script>document.documentElement.classList.add('js')</script>
+  <link rel="preload" href="assets/fonts/familjen-grotesk-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/gugi-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/base.css?v=20261111f">
+  <link rel="stylesheet" href="assets/stage.css?v=20261111f">
+  <link rel="stylesheet" href="assets/site.css?v=20261111h">
+</head>
+<body data-entrance="aperture">
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="nav" data-bar>
+    <nav class="nav__pill" aria-label="Main">
+      <a class="nav__mark brand" href="#top"><img class="brand__logo" src="assets/img/cc2asn-logo-red.webp" alt="" width="26" height="27"><span class="brand__name">CC<span class="brand__two">2</span>ASN</span></a>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#data">Data</a></li>
+        <li><a href="#uses">Why</a></li>
+        <li><a href="#usage">How</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+      <a class="btn btn--accent nav__action" href="#usage" data-nav-action>Build a query</a>
+      <button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-links">Menu</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- Hero: words, window and facts in three columns -->
+    <section class="hero wrap" id="top" data-hero aria-labelledby="hero-title">
+      <div class="hero__grid grid">
+        <div class="hero__words">
+          <p class="hero__eyebrow brand"><img class="brand__logo" src="assets/img/cc2asn-logo-red.webp" alt="" width="44" height="45"><span class="brand__name">CC<span class="brand__two">2</span>ASN</span></p>
+          <h1 id="hero-title" class="hero__title" data-e="headline">Country code in.<br>Networks out.</h1>
+          <p class="hero__lead" data-e="lead">A lookup service for AS numbers and prefixes belonging to any given country in the world. Simply provide country codes as input and you’ll get all ASNs, IPv4 or IPv6 addresses registered to that country.</p>
+          <p class="hero__action" data-e="action"><a class="btn" href="#usage" data-hero-action>Build a query</a></p>
+        </div>
+
+        <div class="hero__frame" data-e="picture" aria-label="Example: the answer for Iceland">
+          <div class="record" data-ui>
+            <p class="record__query"><code>api.cc2asn.com/ALL/IS</code></p>
+            <div class="record__head">
+              <span class="record__cc">IS</span>
+              <span class="record__name">Iceland</span>
+            </div>
+            <dl class="record__fields">
+              <div><dt>AS numbers</dt><dd>86</dd></div>
+              <div class="is-selected"><dt>IPv4 prefixes</dt><dd>176</dd></div>
+              <div><dt>IPv6 prefixes</dt><dd>72</dd></div>
+            </dl>
+            <pre class="record__out record__out--short" aria-hidden="true"><code>5.23.64.0/19
+31.15.112.0/21
+31.43.172.0/23
+31.209.136.0/21</code></pre>
+            <pre class="record__out record__out--long"><code>5.23.64.0/19
+31.15.112.0/21
+31.43.172.0/23
+31.209.136.0/21
+31.209.144.0/20
+31.209.192.0/18
+37.152.64.0/21
+37.156.68.0/24
+37.205.32.0/21
+37.228.128.0/24
+37.228.129.0/24
+45.135.209.0/24
+45.151.214.0/24
+46.22.96.0/20
+46.28.152.0/21
+46.182.184.0/21
+46.239.192.0/18
+62.145.128.0/19
+77.73.33.0/24
+78.40.248.0/21
+79.171.96.0/21
+80.248.16.0/20</code></pre>
+          </div>
+        </div>
+
+        <ul class="hero__facts" role="list">
+          <li><strong>Daily</strong><span>five registries</span></li>
+          <li><strong>Free</strong><span>100 queries daily</span></li>
+          <li><strong>curl or whois</strong><span>no sign-up</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About the data: the scroll parses one registry line into the country's file -->
+    <section class="scene data" id="data" data-scene="registry-line" aria-labelledby="data-title">
+      <div class="scene-stage">
+        <div class="data__grid wrap grid">
+          <div class="data__words">
+            <h2 id="data-title" class="head">Straight from the registries</h2>
+            <p class="data__lead">AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC publish who holds which numbers. CC2ASN fetches each file daily, checks its MD5 sum and files every record by country.</p>
+            <ol class="data__steps" role="list">
+              <li data-step="0"><h3>One line per allocation</h3></li>
+              <li data-step="1"><h3>The country is the key</h3></li>
+              <li data-step="2"><h3>Addresses become a prefix</h3></li>
+              <li data-step="3"><h3>Filed under NO, IPv4</h3></li>
+            </ol>
+          </div>
+
+          <div class="sef" data-ui aria-label="One record from the RIPE NCC delegation file, parsed">
+            <p class="sef__file">delegated-ripencc-extended-latest</p>
+            <pre class="sef__lines"><code><span class="sef__ctx sef__far">ripencc|<wbr>ES|<wbr>ipv4|<wbr>2.136.0.0|<wbr>524288|<wbr>20101105|<wbr>allocated</span>
+<span class="sef__ctx">ripencc|<wbr>IR|<wbr>ipv4|<wbr>2.144.0.0|<wbr>262144|<wbr>20101022|<wbr>allocated</span>
+<span class="sef__line">ripencc|<wbr><span class="sef__f" data-f="cc">NO</span>|<wbr><span class="sef__f" data-f="type">ipv4</span>|<wbr><span class="sef__f" data-f="start">2.148.0.0</span>|<wbr><span class="sef__f" data-f="count">262144</span>|<wbr>20101022|<wbr>allocated</span>
+<span class="sef__ctx">ripencc|<wbr>ES|<wbr>ipv4|<wbr>2.152.16.0|<wbr>4096|<wbr>20101103|<wbr>allocated</span>
+<span class="sef__ctx sef__far">ripencc|<wbr>ES|<wbr>ipv4|<wbr>2.152.42.0|<wbr>512|<wbr>20101103|<wbr>allocated</span></code></pre>
+            <dl class="sef__fields">
+              <div data-row="cc"><dt>Country</dt><dd>NO, Norway</dd></div>
+              <div data-row="type"><dt>Type</dt><dd>IPv4</dd></div>
+              <div data-row="count"><dt>Addresses</dt><dd>262,144 from 2.148.0.0, a /14</dd></div>
+            </dl>
+            <p class="sef__result"><code>2.148.0.0/14</code><span>in NO_IPV4</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Glossary: the three words the service is built on -->
+    <section class="glossary wrap section" id="glossary" aria-labelledby="glossary-title">
+      <h2 id="glossary-title" class="head">The words, briefly</h2>
+      <dl class="glossary__list grid">
+        <div class="glossary__item">
+          <dt><dfn id="term-asn">AS number</dfn></dt>
+          <dd>
+            <p>An autonomous system is a group of networks run under one routing policy, usually by an internet provider, a company or a university. Its number, the ASN, is a 16- or 32-bit integer, written plain (<code>65551</code>) or dotted (<code>1.15</code>).</p>
+            <p><a class="link-plain" href="https://en.wikipedia.org/wiki/Autonomous_system_(Internet)">Read more</a></p>
+          </dd>
+        </div>
+        <div class="glossary__item">
+          <dt><dfn id="term-prefix">Prefix</dfn></dt>
+          <dd>
+            <p>A block of IP addresses, also called an IP range or IP block, written as its first address, a slash and the number of fixed bits: <code>192.0.2.0/24</code> holds 256 addresses. Registries list IPv4 space as a start and a count, which CC2ASN turns into prefixes. IPv6 space is listed as a prefix already.</p>
+            <p><a class="link-plain" href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Read more</a></p>
+          </dd>
+        </div>
+        <div class="glossary__item">
+          <dt><dfn id="term-cc">Country code</dfn></dt>
+          <dd>
+            <p>The two-letter ISO 3166-1 alpha-2 code the registry has on file for the holder, such as <code>NO</code> for Norway. Territories have codes of their own: <code>SJ</code> for Svalbard and Jan Mayen, <code>PS</code> for Palestine.</p>
+            <p><a class="link-plain" href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">Read more</a></p>
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Uses: pick a use case, read how the lists help -->
+    <section class="uses wrap section" id="uses" aria-labelledby="uses-title">
+      <h2 id="uses-title" class="uses__title">Where it helps</h2>
+      <p class="uses__hint">Pick a use case to see how a country’s networks help.</p>
+      <div class="uses__grid grid">
+        <div class="uses__group">
+          <h3>Security</h3>
+          <ul role="list">
+            <li><button type="button" class="uses__item" aria-pressed="true" aria-controls="uses-box" data-desc="Load a country’s IPv4 and IPv6 prefixes into a firewall set to block or allow the whole country in one rule.">Geo-blocking</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Only accept SSH, VPN and admin logins from networks registered in your own country.">Admin allow-lists</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Match addresses in your logs against country prefix lists, so every event carries the country it came from.">Log enrichment</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Flag traffic from countries you never do business with, using their complete prefix lists rather than a handful of known bad IPs.">Threat hunting</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="When an attack is traced to a country, pull its full list of networks to block, watch or report.">Incident scoping</button></li>
+          </ul>
+        </div>
+        <div class="uses__group">
+          <h3>Networking</h3>
+          <ul role="list">
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Build route filters from a country’s AS numbers and prefixes, and refresh them daily as registrations change.">BGP filtering</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="List every AS number registered in a market before you plan peering, transit or an exchange presence there.">Peering research</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Feed a country’s prefixes to your BGP monitoring and get alerted to leaks or hijacks that touch them.">Route monitoring</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Send users from one country to the nearest edge or region, based on the prefixes registered there.">Traffic steering</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Compare how much address space a market holds before you size links, caches or points of presence.">Capacity planning</button></li>
+          </ul>
+        </div>
+        <div class="uses__group">
+          <h3>Research</h3>
+          <ul role="list">
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Pick probe and scan targets that cover every network in a country, not just the largest providers.">Internet measurement</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Count the AS numbers, IPv4 and IPv6 prefixes each country holds, and compare nations side by side.">Address statistics</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Know exactly which networks to watch when a country restricts or cuts its internet access.">Shutdown studies</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Track how many IPv6 prefixes a country has registered next to its IPv4 space.">IPv6 adoption</button></li>
+            <li><button type="button" class="uses__item" aria-pressed="false" aria-controls="uses-box" data-desc="Show students how the internet’s numbers are divided between countries, with real registry data.">Teaching</button></li>
+          </ul>
+        </div>
+        <div class="uses__box" id="uses-box" aria-live="polite">
+          <p class="uses__box-name">Geo-blocking</p>
+          <p class="uses__box-desc">Load a country’s IPv4 and IPv6 prefixes into a firewall set to block or allow the whole country in one rule.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works: the product replay -->
+    <section class="replay-hold how" id="how" aria-labelledby="how-title">
+      <div class="replay-stage">
+        <h2 id="how-title" class="head">Change one word, get the full list</h2>
+        <figure class="replay" data-replay="1400,1500,1400" aria-hidden="true">
+          <div class="q" data-ui>
+            <p class="q__src"><code>curl https://api.cc2asn.com/<span class="q__val" data-at="2" data-from="ASN" data-focus-at="1-2">ALL</span>/IS</code></p>
+            <ul class="q__menu" data-open-at="1" data-close-at="2" hidden>
+              <li>ASN</li><li>IPV4</li><li>IPV6</li><li class="pick">ALL</li>
+            </ul>
+            <div class="q__out">
+              <div class="q__col">
+                <p class="q__h">AS numbers</p>
+                <code>AS1850</code><code>AS6677</code><code>AS12969</code><code>AS15474</code><code>AS21268</code><code>AS24743</code><code>AS25244</code><code>AS25509</code><code>AS29348</code>
+              </div>
+              <div class="q__col" data-focus-at="2">
+                <p class="q__h"><span data-at="2" data-from="AS numbers">IPv4</span></p>
+                <code><span data-at="2" data-from="AS29689">5.23.64.0/19</span></code><code><span data-at="2" data-from="AS30818">31.15.112.0/21</span></code><code><span data-at="2" data-from="AS31236">31.43.172.0/23</span></code><code><span data-at="2" data-from="AS31441">31.209.136.0/21</span></code><code><span data-at="2" data-from="AS34678">31.209.144.0/20</span></code><code><span data-at="2" data-from="AS35834">31.209.192.0/18</span></code><code><span data-at="2" data-from="AS39418">37.152.64.0/21</span></code><code><span data-at="2" data-from="AS39472">37.156.68.0/24</span></code><code><span data-at="2" data-from="AS39532">37.205.32.0/21</span></code>
+              </div>
+              <div class="q__col" data-focus-at="2">
+                <p class="q__h"><span data-at="2" data-from="AS numbers">IPv6</span></p>
+                <code><span data-at="2" data-from="AS43571">2001:1A98::/29</span></code><code><span data-at="2" data-from="AS43892">2001:678:11A0::/48</span></code><code><span data-at="2" data-from="AS44275">2001:678:AFC::/48</span></code><code><span data-at="2" data-from="AS44515">2001:67C:1824::/48</span></code><code><span data-at="2" data-from="AS44644">2001:67C:2114::/48</span></code><code><span data-at="2" data-from="AS44735">2001:67C:2AAC::/48</span></code><code><span data-at="2" data-from="AS44925">2001:67C:6C::/48</span></code><code><span data-at="2" data-from="AS47545">2001:67C:824::/48</span></code><code><span data-at="2" data-from="AS47828">2001:67C:BDC::/48</span></code>
+              </div>
+            </div>
+            <p class="q__band" data-focus-at="3"><b class="q__fig" data-roll-at="3" data-from="86">334</b><span><span data-at="3" data-from="AS numbers for Iceland">records for Iceland: 86 ASNs, 176 IPv4, 72 IPv6</span></span></p>
+          </div>
+        </figure>
+        <div class="replay__foot">
+          <p class="replay__said">Swap ASN for ALL and the same query returns Iceland's AS numbers and both prefix lists.</p>
+          <button type="button" class="replay__again" data-replay-again>Replay</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Usage: the query builder -->
+    <section class="usage wrap section" id="usage" aria-labelledby="usage-title">
+      <div class="usage__statement" data-brackets>
+        <p class="usage__word" aria-label="Two letters"><span class="br" aria-hidden="true">[</span><span>two letters</span><span class="br" aria-hidden="true">]</span></p>
+        <p class="usage__sub">Any country code the registries use, in upper or lower case.</p>
+      </div>
+
+      <div class="usage__grid grid">
+        <div class="usage__controls">
+          <h2 id="usage-title" class="head">Build your query</h2>
+          <form class="tool" id="tool" novalidate>
+            <div class="tool__row">
+              <label class="tool__label" for="cc">Country</label>
+              <select class="field tool__cc" id="cc" name="cc" aria-describedby="cc-note">
+                <option value="AF">Afghanistan (AF)</option>
+                <option value="AX">Åland Islands (AX)</option>
+                <option value="AL">Albania (AL)</option>
+                <option value="DZ">Algeria (DZ)</option>
+                <option value="AS">American Samoa (AS)</option>
+                <option value="AD">Andorra (AD)</option>
+                <option value="AO">Angola (AO)</option>
+                <option value="AI">Anguilla (AI)</option>
+                <option value="AQ">Antarctica (AQ)</option>
+                <option value="AG">Antigua and Barbuda (AG)</option>
+                <option value="AR">Argentina (AR)</option>
+                <option value="AM">Armenia (AM)</option>
+                <option value="AW">Aruba (AW)</option>
+                <option value="AU">Australia (AU)</option>
+                <option value="AT">Austria (AT)</option>
+                <option value="AZ">Azerbaijan (AZ)</option>
+                <option value="BS">Bahamas (BS)</option>
+                <option value="BH">Bahrain (BH)</option>
+                <option value="BD">Bangladesh (BD)</option>
+                <option value="BB">Barbados (BB)</option>
+                <option value="BY">Belarus (BY)</option>
+                <option value="BE">Belgium (BE)</option>
+                <option value="BZ">Belize (BZ)</option>
+                <option value="BJ">Benin (BJ)</option>
+                <option value="BM">Bermuda (BM)</option>
+                <option value="BT">Bhutan (BT)</option>
+                <option value="BO">Bolivia (BO)</option>
+                <option value="BA">Bosnia and Herzegovina (BA)</option>
+                <option value="BW">Botswana (BW)</option>
+                <option value="BV">Bouvet Island (BV)</option>
+                <option value="BR">Brazil (BR)</option>
+                <option value="IO">British Indian Ocean Territory (IO)</option>
+                <option value="VG">British Virgin Islands (VG)</option>
+                <option value="BN">Brunei (BN)</option>
+                <option value="BG">Bulgaria (BG)</option>
+                <option value="BF">Burkina Faso (BF)</option>
+                <option value="BI">Burundi (BI)</option>
+                <option value="KH">Cambodia (KH)</option>
+                <option value="CM">Cameroon (CM)</option>
+                <option value="CA">Canada (CA)</option>
+                <option value="CV">Cape Verde (CV)</option>
+                <option value="BQ">Caribbean Netherlands (BQ)</option>
+                <option value="KY">Cayman Islands (KY)</option>
+                <option value="CF">Central African Republic (CF)</option>
+                <option value="TD">Chad (TD)</option>
+                <option value="CL">Chile (CL)</option>
+                <option value="CN">China (CN)</option>
+                <option value="CX">Christmas Island (CX)</option>
+                <option value="CC">Cocos (Keeling) Islands (CC)</option>
+                <option value="CO">Colombia (CO)</option>
+                <option value="KM">Comoros (KM)</option>
+                <option value="CG">Congo (Brazzaville) (CG)</option>
+                <option value="CD">Congo (Kinshasa) (CD)</option>
+                <option value="CK">Cook Islands (CK)</option>
+                <option value="CR">Costa Rica (CR)</option>
+                <option value="CI">Côte d&#x27;Ivoire (CI)</option>
+                <option value="HR">Croatia (HR)</option>
+                <option value="CU">Cuba (CU)</option>
+                <option value="CW">Curaçao (CW)</option>
+                <option value="CY">Cyprus (CY)</option>
+                <option value="CZ">Czechia (CZ)</option>
+                <option value="DK">Denmark (DK)</option>
+                <option value="DJ">Djibouti (DJ)</option>
+                <option value="DM">Dominica (DM)</option>
+                <option value="DO">Dominican Republic (DO)</option>
+                <option value="EC">Ecuador (EC)</option>
+                <option value="EG">Egypt (EG)</option>
+                <option value="SV">El Salvador (SV)</option>
+                <option value="GQ">Equatorial Guinea (GQ)</option>
+                <option value="ER">Eritrea (ER)</option>
+                <option value="EE">Estonia (EE)</option>
+                <option value="SZ">Eswatini (SZ)</option>
+                <option value="ET">Ethiopia (ET)</option>
+                <option value="FK">Falkland Islands (FK)</option>
+                <option value="FO">Faroe Islands (FO)</option>
+                <option value="FJ">Fiji (FJ)</option>
+                <option value="FI">Finland (FI)</option>
+                <option value="FR">France (FR)</option>
+                <option value="GF">French Guiana (GF)</option>
+                <option value="PF">French Polynesia (PF)</option>
+                <option value="TF">French Southern and Antarctic Lands (TF)</option>
+                <option value="GA">Gabon (GA)</option>
+                <option value="GM">Gambia (GM)</option>
+                <option value="GE">Georgia (GE)</option>
+                <option value="DE">Germany (DE)</option>
+                <option value="GH">Ghana (GH)</option>
+                <option value="GI">Gibraltar (GI)</option>
+                <option value="GR">Greece (GR)</option>
+                <option value="GL">Greenland (GL)</option>
+                <option value="GD">Grenada (GD)</option>
+                <option value="GP">Guadeloupe (GP)</option>
+                <option value="GU">Guam (GU)</option>
+                <option value="GT">Guatemala (GT)</option>
+                <option value="GG">Guernsey (GG)</option>
+                <option value="GN">Guinea (GN)</option>
+                <option value="GW">Guinea-Bissau (GW)</option>
+                <option value="GY">Guyana (GY)</option>
+                <option value="HT">Haiti (HT)</option>
+                <option value="HM">Heard Island and McDonald Islands (HM)</option>
+                <option value="HN">Honduras (HN)</option>
+                <option value="HK">Hong Kong (HK)</option>
+                <option value="HU">Hungary (HU)</option>
+                <option value="IS">Iceland (IS)</option>
+                <option value="IN">India (IN)</option>
+                <option value="ID">Indonesia (ID)</option>
+                <option value="IR">Iran (IR)</option>
+                <option value="IQ">Iraq (IQ)</option>
+                <option value="IE">Ireland (IE)</option>
+                <option value="IM">Isle of Man (IM)</option>
+                <option value="IL">Israel (IL)</option>
+                <option value="IT">Italy (IT)</option>
+                <option value="JM">Jamaica (JM)</option>
+                <option value="JP">Japan (JP)</option>
+                <option value="JE">Jersey (JE)</option>
+                <option value="JO">Jordan (JO)</option>
+                <option value="KZ">Kazakhstan (KZ)</option>
+                <option value="KE">Kenya (KE)</option>
+                <option value="KI">Kiribati (KI)</option>
+                <option value="KW">Kuwait (KW)</option>
+                <option value="KG">Kyrgyzstan (KG)</option>
+                <option value="LA">Laos (LA)</option>
+                <option value="LV">Latvia (LV)</option>
+                <option value="LB">Lebanon (LB)</option>
+                <option value="LS">Lesotho (LS)</option>
+                <option value="LR">Liberia (LR)</option>
+                <option value="LY">Libya (LY)</option>
+                <option value="LI">Liechtenstein (LI)</option>
+                <option value="LT">Lithuania (LT)</option>
+                <option value="LU">Luxembourg (LU)</option>
+                <option value="MO">Macao (MO)</option>
+                <option value="MG">Madagascar (MG)</option>
+                <option value="MW">Malawi (MW)</option>
+                <option value="MY">Malaysia (MY)</option>
+                <option value="MV">Maldives (MV)</option>
+                <option value="ML">Mali (ML)</option>
+                <option value="MT">Malta (MT)</option>
+                <option value="MH">Marshall Islands (MH)</option>
+                <option value="MQ">Martinique (MQ)</option>
+                <option value="MR">Mauritania (MR)</option>
+                <option value="MU">Mauritius (MU)</option>
+                <option value="YT">Mayotte (YT)</option>
+                <option value="MX">Mexico (MX)</option>
+                <option value="FM">Micronesia (FM)</option>
+                <option value="MD">Moldova (MD)</option>
+                <option value="MC">Monaco (MC)</option>
+                <option value="MN">Mongolia (MN)</option>
+                <option value="ME">Montenegro (ME)</option>
+                <option value="MS">Montserrat (MS)</option>
+                <option value="MA">Morocco (MA)</option>
+                <option value="MZ">Mozambique (MZ)</option>
+                <option value="MM">Myanmar (MM)</option>
+                <option value="NA">Namibia (NA)</option>
+                <option value="NR">Nauru (NR)</option>
+                <option value="NP">Nepal (NP)</option>
+                <option value="NL">Netherlands (NL)</option>
+                <option value="NC">New Caledonia (NC)</option>
+                <option value="NZ">New Zealand (NZ)</option>
+                <option value="NI">Nicaragua (NI)</option>
+                <option value="NE">Niger (NE)</option>
+                <option value="NG">Nigeria (NG)</option>
+                <option value="NU">Niue (NU)</option>
+                <option value="NF">Norfolk Island (NF)</option>
+                <option value="KP">North Korea (KP)</option>
+                <option value="MK">North Macedonia (MK)</option>
+                <option value="MP">Northern Mariana Islands (MP)</option>
+                <option value="NO" selected>Norway (NO)</option>
+                <option value="OM">Oman (OM)</option>
+                <option value="PK">Pakistan (PK)</option>
+                <option value="PW">Palau (PW)</option>
+                <option value="PS">Palestine (PS)</option>
+                <option value="PA">Panama (PA)</option>
+                <option value="PG">Papua New Guinea (PG)</option>
+                <option value="PY">Paraguay (PY)</option>
+                <option value="PE">Peru (PE)</option>
+                <option value="PH">Philippines (PH)</option>
+                <option value="PN">Pitcairn Islands (PN)</option>
+                <option value="PL">Poland (PL)</option>
+                <option value="PT">Portugal (PT)</option>
+                <option value="PR">Puerto Rico (PR)</option>
+                <option value="QA">Qatar (QA)</option>
+                <option value="RE">Réunion (RE)</option>
+                <option value="RO">Romania (RO)</option>
+                <option value="RU">Russia (RU)</option>
+                <option value="RW">Rwanda (RW)</option>
+                <option value="BL">Saint Barthélemy (BL)</option>
+                <option value="SH">Saint Helena, Ascension and Tristan da Cunha (SH)</option>
+                <option value="KN">Saint Kitts and Nevis (KN)</option>
+                <option value="LC">Saint Lucia (LC)</option>
+                <option value="MF">Saint Martin (MF)</option>
+                <option value="PM">Saint Pierre and Miquelon (PM)</option>
+                <option value="VC">Saint Vincent and Grenadines (VC)</option>
+                <option value="WS">Samoa (WS)</option>
+                <option value="SM">San Marino (SM)</option>
+                <option value="ST">São Tomé and Príncipe (ST)</option>
+                <option value="SA">Saudi Arabia (SA)</option>
+                <option value="SN">Senegal (SN)</option>
+                <option value="RS">Serbia (RS)</option>
+                <option value="SC">Seychelles (SC)</option>
+                <option value="SL">Sierra Leone (SL)</option>
+                <option value="SG">Singapore (SG)</option>
+                <option value="SX">Sint Maarten (SX)</option>
+                <option value="SK">Slovakia (SK)</option>
+                <option value="SI">Slovenia (SI)</option>
+                <option value="SB">Solomon Islands (SB)</option>
+                <option value="SO">Somalia (SO)</option>
+                <option value="ZA">South Africa (ZA)</option>
+                <option value="GS">South Georgia and South Sandwich Islands (GS)</option>
+                <option value="KR">South Korea (KR)</option>
+                <option value="SS">South Sudan (SS)</option>
+                <option value="ES">Spain (ES)</option>
+                <option value="LK">Sri Lanka (LK)</option>
+                <option value="SD">Sudan (SD)</option>
+                <option value="SR">Suriname (SR)</option>
+                <option value="SJ">Svalbard and Jan Mayen (SJ)</option>
+                <option value="SE">Sweden (SE)</option>
+                <option value="CH">Switzerland (CH)</option>
+                <option value="SY">Syria (SY)</option>
+                <option value="TW">Taiwan (TW)</option>
+                <option value="TJ">Tajikistan (TJ)</option>
+                <option value="TZ">Tanzania (TZ)</option>
+                <option value="TH">Thailand (TH)</option>
+                <option value="TL">Timor-Leste (TL)</option>
+                <option value="TG">Togo (TG)</option>
+                <option value="TK">Tokelau (TK)</option>
+                <option value="TO">Tonga (TO)</option>
+                <option value="TT">Trinidad and Tobago (TT)</option>
+                <option value="TN">Tunisia (TN)</option>
+                <option value="TR">Türkiye (TR)</option>
+                <option value="TM">Turkmenistan (TM)</option>
+                <option value="TC">Turks and Caicos Islands (TC)</option>
+                <option value="TV">Tuvalu (TV)</option>
+                <option value="UM">U.S. Outlying Islands (UM)</option>
+                <option value="VI">U.S. Virgin Islands (VI)</option>
+                <option value="UG">Uganda (UG)</option>
+                <option value="UA">Ukraine (UA)</option>
+                <option value="AE">United Arab Emirates (AE)</option>
+                <option value="GB">United Kingdom (GB)</option>
+                <option value="US">United States (US)</option>
+                <option value="UY">Uruguay (UY)</option>
+                <option value="UZ">Uzbekistan (UZ)</option>
+                <option value="VU">Vanuatu (VU)</option>
+                <option value="VA">Vatican City (VA)</option>
+                <option value="VE">Venezuela (VE)</option>
+                <option value="VN">Vietnam (VN)</option>
+                <option value="WF">Wallis and Futuna (WF)</option>
+                <option value="EH">Western Sahara (EH)</option>
+                <option value="YE">Yemen (YE)</option>
+                <option value="ZM">Zambia (ZM)</option>
+                <option value="ZW">Zimbabwe (ZW)</option>
+              </select>
+              <p class="tool__note" id="cc-note">All 249 ISO 3166-1 codes. A few territories have no registered networks and answer 404.</p>
+            </div>
+            <fieldset class="tool__row">
+              <legend class="tool__label">Records</legend>
+              <div class="steps" data-group="type">
+                <button type="button" class="step" data-value="ASN" aria-pressed="true">AS numbers</button>
+                <button type="button" class="step" data-value="IPV4" aria-pressed="false">IPv4</button>
+                <button type="button" class="step" data-value="IPV6" aria-pressed="false">IPv6</button>
+                <button type="button" class="step" data-value="ALL" aria-pressed="false">All</button>
+              </div>
+            </fieldset>
+            <fieldset class="tool__row">
+              <legend class="tool__label">Client</legend>
+              <div class="steps" data-group="client">
+                <button type="button" class="step" data-value="curl" aria-pressed="true">curl</button>
+                <button type="button" class="step" data-value="netcat" aria-pressed="false">netcat</button>
+                <button type="button" class="step" data-value="whois" aria-pressed="false">whois</button>
+              </div>
+            </fieldset>
+            <fieldset class="tool__row" data-only="curl">
+              <legend class="tool__label">Format</legend>
+              <div class="steps" data-group="format">
+                <button type="button" class="step" data-value="text" aria-pressed="true">Text</button>
+                <button type="button" class="step" data-value="json" aria-pressed="false">JSON</button>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+
+        <div class="usage__result">
+          <div class="cmd" aria-live="polite">
+            <p class="cmd__label">Your command</p>
+            <pre class="cmd__code"><code id="cmd">curl https://api.cc2asn.com/NO</code></pre>
+            <p class="cmd__what" id="cmd-what">Every AS number registered to NO, one per line.</p>
+            <p class="cmd__actions">
+              <button type="button" class="btn" id="copy">Copy command</button>
+              <a class="btn btn--quiet" id="open" href="https://api.cc2asn.com/NO" target="_blank" rel="noopener">Open answer</a>
+            </p>
+          </div>
+          <table class="ref">
+            <caption>Query syntax</caption>
+            <thead><tr><th scope="col">Records</th><th scope="col">HTTP path</th><th scope="col">whois, port 43</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">AS numbers</th><td><code>/NO</code></td><td><code>no</code></td></tr>
+              <tr><th scope="row">IPv4</th><td><code>/IPV4/NO</code></td><td><code>ipv4 no</code></td></tr>
+              <tr><th scope="row">IPv6</th><td><code>/IPV6/NO</code></td><td><code>ipv6 no</code></td></tr>
+              <tr><th scope="row">All</th><td><code>/ALL/NO</code></td><td><code>all no</code></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: question index, one answer -->
+    <section class="faq wrap section" id="faq" aria-labelledby="faq-title">
+      <div class="faq__grid grid">
+        <div class="faq__list">
+          <h2 id="faq-title" class="faq__title">Good to know</h2>
+          <ul role="list">
+            <li><button type="button" class="faq__q" aria-expanded="true" aria-controls="a1" id="q1">How fresh is the data?</button>
+              <div class="faq__a" id="a1" role="region" aria-labelledby="q1"><p>The registries' files are fetched every day and sorted by country. A lookup always returns the latest day.</p></div></li>
+            <li><button type="button" class="faq__q" aria-expanded="false" aria-controls="a2" id="q2">Does registered mean located?</button>
+              <div class="faq__a" id="a2" role="region" aria-labelledby="q2"><p>No. It is the country the registry has on file for the holder. A network can be used anywhere; this is registration, not geolocation.</p></div></li>
+            <li><button type="button" class="faq__q" aria-expanded="false" aria-controls="a3" id="q3">What does it cost?</button>
+              <div class="faq__a" id="a3" role="region" aria-labelledby="q3"><p>Nothing. Each person gets 100 queries a day and 30 a minute, with no account and no key.</p></div></li>
+            <li><button type="button" class="faq__q" aria-expanded="false" aria-controls="a4" id="q4">Can I look up an earlier date?</button>
+              <div class="faq__a" id="a4" role="region" aria-labelledby="q4"><p>No. The API serves the latest day only; dated paths answer 404.</p></div></li>
+            <li><button type="button" class="faq__q" aria-expanded="false" aria-controls="a5" id="q5">What if a code is unknown?</button>
+              <div class="faq__a" id="a5" role="region" aria-labelledby="q5"><p>You get a 404 with the path that was not found. Use the two-letter ISO 3166 codes the registries use.</p></div></li>
+            <li><button type="button" class="faq__q" aria-expanded="false" aria-controls="a6" id="q6">Why does whois cut my answer short?</button>
+              <div class="faq__a" id="a6" role="region" aria-labelledby="q6"><p>Some whois clients stop on long answers. Send the same query with netcat: <code>echo ipv4 dk | nc cc2asn.com 43</code></p></div></li>
+          </ul>
+        </div>
+        <div class="faq__pane" aria-hidden="true"><p class="faq__answer"></p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot" aria-labelledby="foot-title">
+    <div class="foot__grid wrap grid">
+      <nav class="foot__links" aria-labelledby="foot-title">
+        <h2 id="foot-title" class="sr-only">CC2ASN</h2>
+        <ul role="list">
+          <li><a href="#data">Data</a></li>
+          <li><a href="#glossary">Glossary</a></li>
+          <li><a href="#uses">Why</a></li>
+          <li><a href="#usage">How</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://github.com/toringe/cc2asn">Source code</a></li>
+        </ul>
+      </nav>
+      <div class="foot__side">
+        <p class="foot__name brand"><img class="brand__logo" src="assets/img/cc2asn-logo-red.webp" alt="" width="30" height="31"><span class="brand__name">CC<span class="brand__two">2</span>ASN</span></p>
+        <p>Questions, bugs or ideas: <a class="link-plain" href="https://github.com/toringe/cc2asn/issues">open an issue on GitHub</a>.</p>
+        <ul class="foot__social" role="list">
+          <li><a class="link-plain" href="https://github.com/toringe/cc2asn">GitHub</a></li>
+          <li><a class="link-plain" href="https://www.linkedin.com/in/torskaar">LinkedIn</a></li>
+        </ul>
+        <div class="foot__sources">
+          <h3 id="sources-title">Sources</h3>
+          <ul role="list" aria-labelledby="sources-title">
+            <li><a class="link-plain" href="https://ftp.afrinic.net/pub/stats/afrinic/delegated-afrinic-extended-latest">AFRINIC</a></li>
+            <li><a class="link-plain" href="https://ftp.apnic.net/stats/apnic/delegated-apnic-extended-latest">APNIC</a></li>
+            <li><a class="link-plain" href="https://ftp.arin.net/pub/stats/arin/delegated-arin-extended-latest">ARIN</a></li>
+            <li><a class="link-plain" href="https://ftp.lacnic.net/pub/stats/lacnic/delegated-lacnic-extended-latest">LACNIC</a></li>
+            <li><a class="link-plain" href="https://ftp.ripe.net/ripe/stats/delegated-ripencc-extended-latest">RIPE NCC</a></li>
+            <li><a class="link-plain" href="https://ftp.ripe.net/ripe/stats/RIR-Statistics-Exchange-Format.txt">File format</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot__legal">
+        <p>© 2026 CC2ASN. Data from the AFRINIC, APNIC, ARIN, LACNIC and RIPE NCC delegation statistics. The lists CC2ASN serves are free to reuse under <a class="link-plain" rel="license" href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>; please credit CC2ASN.</p>
+        <p class="foot__disclaimer">Provided as is, for general information, with no guarantee that it is complete, accurate or current. The registries record the country where numbers were first allocated, not where they are in use today. CC2ASN accepts no liability for decisions made or actions taken based on the data.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="assets/base.js?v=20261111f"></script>
+  <script defer src="assets/replay.js?v=20261111f"></script>
+  <script defer src="assets/vendor/gsap.min.js?v=3.15.0"></script>
+  <script defer src="assets/vendor/ScrollTrigger.min.js?v=3.15.0"></script>
+  <script defer src="assets/stage.js?v=20261111f"></script>
+  <script defer src="assets/scene-registry-line.js?v=20261111f"></script>
+  <script defer src="assets/site.js?v=20261111f"></script>
+</body>
+</html>

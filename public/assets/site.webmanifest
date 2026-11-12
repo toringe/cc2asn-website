@@ -1,0 +1,13 @@
+{
+  "name": "CC2ASN",
+  "short_name": "CC2ASN",
+  "description": "Every AS number and IP prefix registered to a country.",
+  "start_url": "../",
+  "icons": [
+    { "src": "android-chrome-192x192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "android-chrome-512x512.png", "sizes": "512x512", "type": "image/png" }
+  ],
+  "theme_color": "#10150f",
+  "background_color": "#10150f",
+  "display": "standalone"
+}
